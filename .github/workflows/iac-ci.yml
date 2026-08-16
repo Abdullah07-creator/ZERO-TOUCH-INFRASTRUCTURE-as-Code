@@ -1,0 +1,37 @@
+name: "IaC Static Analysis & Validation"
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'terraform/**'
+      - '.github/workflows/iac-ci.yml'
+
+jobs:
+  validate:
+    name: "Terraform Lint & Validate"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout Source Code"
+        uses: actions/checkout@v4
+
+      - name: "Setup Terraform Engine"
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.0"
+
+      - name: "Validate Code Formatting"
+        run: terraform fmt -check -diff
+        continue-on-error: false
+
+      - name: "Verify Syntax & Structural Integrity"
+        run: |
+          if [ -d "terraform" ]; then
+            cd terraform
+            terraform init -backend=false
+            terraform validate
+          else
+            echo "No terraform directory found yet. Skipping validation."
+          fi

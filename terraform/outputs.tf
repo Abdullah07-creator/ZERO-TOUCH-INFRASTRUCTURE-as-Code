@@ -17,3 +17,7 @@ output "internet_gateway_id" {
   value       = aws_internet_gateway.igw.id
   description = "The ID of the Internet Gateway"
 }
+output "web_server_public_ip" {
+  value       = aws_instance.web.public_ip
+  description = "The public IP address of the deployed web server"
+}

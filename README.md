@@ -47,15 +47,15 @@ Plaintext
 zero-touch-iac/
 ├── .github/
 │   └── workflows/
-│       └── iac-ci.yml          # GitHub Actions CI/CD Pipeline Workflow
+│       └── iac-ci.yml          
 ├── terraform/
-│   ├── backend.tf              # Remote S3 Backend Configuration
-│   ├── backend_resources.tf    # S3 State Bucket & DynamoDB Lock Table Definitions
-│   ├── compute.tf              # EC2 Web Instance, Security Group, and User Data Script
-│   ├── outputs.tf              # Exported Infrastructure Identifiers & Public IP
-│   ├── variables.tf            # Input Variable Definitions & Defaults
-│   └── vpc.tf                  # VPC, Subnets, IGW, and Route Table Architecture
-└── README.md                   # Project Documentation
+│   ├── backend.tf            
+│   ├── backend_resources.tf
+│   ├── compute.tf            
+│   ├── outputs.tf          
+│   ├── variables.tf            
+│   └── vpc.tf               
+└── README.md               
 ⚡ CI/CD Pipeline Workflow
 Plaintext
 [ Developer Push / PR ] ──► [ GitHub Actions Runner ]

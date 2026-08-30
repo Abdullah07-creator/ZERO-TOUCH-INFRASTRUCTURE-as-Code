@@ -3,7 +3,7 @@ A production-grade, automated Infrastructure as Code (IaC) pipeline built with *
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 ```text
                            +-------------------------------------------------+
@@ -42,7 +42,7 @@ Modular AWS Networking: Custom VPC, Public Subnet, Private Subnet, Internet Gate
 Automated Compute Provisioning: Ubuntu 22.04 LTS EC2 web server provisioned dynamically with automated Nginx web server installation via startup scripts (user_data).
 
 Security First: Stateful Security Groups restricting inbound access exclusively to port 80 (HTTP) while allowing isolated outbound access.
-📁 Repository Structure
+ Repository Structure
 Plaintext
 zero-touch-iac/
 ├── .github/
@@ -67,7 +67,7 @@ Plaintext
                            [ Merge PR to main ]
                                    │
                                    └── 4. terraform apply -auto-approve ──► [ Live AWS Deployment ]
-🛠️ How to Provision Locally
+ How to Provision Locally
 Prerequisites
 Terraform CLI (>= 1.5.0)
 
